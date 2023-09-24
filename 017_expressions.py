@@ -101,7 +101,11 @@ add_one(add_one(add_one(add_one(add_one(add_one(1))))))
 
 # EXPRESSIONS PLAYGROUND BEGINS
 
+add_one(add_one(5)) * 30 / 2
 
+3 + add_one(add_one(5)) * 10
+
+20 + add_one(add_one(add_one(add_one(20)))) / 2
 
 # EXPRESSIONS PLAYGROUND ENDS
 
