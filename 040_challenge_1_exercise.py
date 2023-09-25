@@ -30,7 +30,48 @@ print("")
 print("Function: report_long_words")
 
 def report_long_words(words):
-  pass
+  long_words = get_long_words(words)
+  no_hyphen = remove_hyphen_words(long_words)
+  word_list = get_over_fifteen(no_hyphen)
+  report = format_report(word_list)
+  return report
+
+def get_long_words(words):
+  long_words = []
+  for word in words:
+    letter_count = len(word)
+    if letter_count > 10: 
+      long_words.append(word)
+      print(long_words)
+  return long_words
+
+def remove_hyphen_words(long_words):
+  no_hyphen = []
+  for word in long_words:
+    if '-' not in word:
+      no_hyphen.append(word)
+      print(no_hyphen)
+  return no_hyphen
+
+def get_over_fifteen(no_hyphen):
+  over_fifteen = []
+  word_list = []
+  for word in no_hyphen:
+    if len(word) > 15:
+      short_word = word.replace(word[15:100], '...')
+      over_fifteen.append(short_word)
+      print(over_fifteen)
+      no_hyphen.remove(word)
+    word_list = no_hyphen + over_fifteen
+  return word_list
+
+def format_report(word_list):
+  report = "These words are quite long: "
+  for word in word_list:
+    report += word 
+    if word != word_list[-1]:
+      report += "," + " "
+  return report
 
 check_that_these_are_equal(
   report_long_words([
