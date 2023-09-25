@@ -40,6 +40,11 @@ print("  " + my_dictionary["List"])
 # print out the value below.
 
 print("A Dictionary is:")
-# ...
+
+dictionary = {
+    "Dictionary": "A collection of keys mapped to values"
+}
+
+print(dictionary["Dictionary"])
 
 # Once you're done, move on to 038_dict_operations.py
